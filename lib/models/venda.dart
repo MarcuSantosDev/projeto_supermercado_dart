@@ -31,7 +31,7 @@ class Venda {
     required this.cliente,
     required this.itens,
     DateTime? data,
-    this.status = StatusVenda.pendente,
+    this.status = StatusVenda.confirmada,
     this.observacoes,
   }) : data = data ?? DateTime.now();
 

@@ -24,7 +24,6 @@ class SupermercadoApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/home',
       routes: {
-
         '/home': (context) => const HomeScreen(),
 
         '/produtos/listar': (context) => const ListarProdutosScreen(),
@@ -33,7 +32,6 @@ class SupermercadoApp extends StatelessWidget {
         '/vendas/listar': (context) => const ListarVendasScreen(),
         '/vendas/registrar': (context) => const RegistrarVendaScreen(),
 
-
         '/clientes/cadastrar': (context) =>
             CadastrarClienteScreen(clienteService: clienteService),
         '/clientes/listar': (context) =>
@@ -41,7 +39,41 @@ class SupermercadoApp extends StatelessWidget {
       },
 
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF2E7D32),
+          brightness: Brightness.light,
+          primary: const Color(0xFF2E7D32),
+          secondary: const Color(0xFF66BB6A),
+          tertiary: const Color(0xFF81C784),
+        ),
+        appBarTheme: const AppBarTheme(
+          centerTitle: true,
+          elevation: 0,
+          backgroundColor: Color(0xFF2E7D32),
+          foregroundColor: Colors.white,
+        ),
+        cardTheme: CardThemeData(
+          elevation: 2,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+          filled: true,
+          fillColor: Colors.grey[50],
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            elevation: 2,
+          ),
+        ),
       ),
     );
   }
